@@ -12,6 +12,11 @@ function Person(name,age,job){
 		return new Person(name,age,job)
 	}
 }
+//防篡改对象
+Object.preventExtensions(Person);		//Person对象无法添加属性，可修改删除原属性
+Object.seal(Person);		//Person对象无法添加删除属性，仅可以修改属性
+Object.freeze(Person);		//啥都不行
+Object.isExtensible(Person);		//false,检测是否可扩展
 
 
 //惰性载入函数（优化if语句较多的函数）
